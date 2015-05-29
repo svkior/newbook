@@ -35,5 +35,9 @@ func HandleUserCreate(w http.ResponseWriter, r *http.Request, _ httprouter.Param
 	if err != nil {
 		panic(err)
 	}
+
+	session := NewSession(w)
+	session.UserID = user.ID
+
 	http.Redirect(w, r, "/?flash=User+created", http.StatusFound)
 }
