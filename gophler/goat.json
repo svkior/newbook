@@ -1,0 +1,57 @@
+{
+  "init_tasks": [
+    {
+      "command": "make stop"
+    },
+    {
+      "command": "make run",
+      "nowait": true
+    }
+  ],
+  "watchers": [
+    {
+      "extension": "go",
+      "tasks": [
+        {
+          "command": "make stop"
+        },
+        {
+          "command": "make run",
+          "nowait": true
+        }
+      ]
+    },
+    {
+      "extension": "styl",
+      "tasks": [
+        {
+          "command": "make stylus"
+        }
+      ]
+    },
+    {
+      "extension": "css",
+      "excludes": ["all.css", "all.min.css"],
+      "tasks": [
+        {
+          "command": "make catcss"
+        },
+        {
+          "command": "make uglifycss"
+        }
+      ]
+    },
+    {
+      "extension": "js",
+      "excludes": ["all.js", "all.min.js"],
+      "tasks": [
+        {
+          "command": "make catjs"
+        },
+        {
+          "command": "make uglifyjs"
+        }
+      ]
+    }
+  ]
+}

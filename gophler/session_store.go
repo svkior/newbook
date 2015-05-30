@@ -1,5 +1,11 @@
 package main
 
+import (
+	"encoding/json"
+	"io/ioutil"
+	"os"
+)
+
 type SessionStore interface {
 	Find(string) (*Session, error)
 	Save(*Session) error
