@@ -1,6 +1,7 @@
 package main
 
 import (
+	//"log"
 	"net/http"
 )
 
@@ -33,7 +34,9 @@ func (m Middleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	mw := NewMiddlewareResponseWriter(w)
 
 	for _, handler := range m {
+		//log.Printf("Handle %p, IN mw : ", handler, mw.written)
 		handler.ServeHTTP(mw, r)
+		//log.Printf("Handle %p, OUT mw : ", handler, mw.written)
 		if mw.written {
 			return
 		}

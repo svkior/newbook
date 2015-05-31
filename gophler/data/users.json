@@ -1,10 +1,28 @@
 {
   "Users": {
+    "usr_80aGcfM8NM6nrOCPbh2F": {
+      "ID": "usr_80aGcfM8NM6nrOCPbh2F",
+      "Username": "svkior",
+      "Email": "svkior@gmail.com",
+      "HashedPassword": "$2a$10$fVNqlO8zeMj2qrD7og9iuO4viqOMuU0u2AP4wb5yDi33M99/3Aac."
+    },
     "usr_AIw84NHkZtFdYwqffNF7": {
       "ID": "usr_AIw84NHkZtFdYwqffNF7",
       "Username": "1",
       "Email": "2",
       "HashedPassword": "$2a$10$FlSmDp5AvEtrc/fPxuDoXuUNR5Cp.gYsP2L9Gh0oylwm48CtG/s4."
+    },
+    "usr_FGeDUIgku7Zsk8Ki9C2c": {
+      "ID": "usr_FGeDUIgku7Zsk8Ki9C2c",
+      "Username": "21",
+      "Email": "22",
+      "HashedPassword": "$2a$10$GTvXKHn/WlA5xWtvkXxt1uugbR3LCYNBcf/KlrQQeqekwVc3bt8q2"
+    },
+    "usr_s5QVn6G0NsdYtFmJeaWJ": {
+      "ID": "usr_s5QVn6G0NsdYtFmJeaWJ",
+      "Username": "svkior1",
+      "Email": "test",
+      "HashedPassword": "$2a$10$jP0oH1gK/dDB.p7VaTh26eT7dlbSIYIfv0jBfeHr0GDvEDcjN2euS"
     }
   }
 }

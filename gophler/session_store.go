@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
 )
@@ -49,6 +50,9 @@ func (s *FileSessionStore) Find(id string) (*Session, error) {
 }
 
 func (store *FileSessionStore) Save(session *Session) error {
+
+	store.Sessions[session.ID] = *session
+
 	contents, err := json.MarshalIndent(store, "", "  ")
 	if err != nil {
 		return err
