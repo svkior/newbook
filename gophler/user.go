@@ -2,6 +2,8 @@ package main
 
 import (
 	"golang.org/x/crypto/bcrypt"
+	"fmt"
+	"crypto/md5"
 )
 
 const (
@@ -108,4 +110,15 @@ func UpdateUser(user *User, email, currentPassword, newPassword string) (User, e
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(newPassword), hashCost)
 	user.HashedPassword = string(hashedPassword)
 	return out, err
+}
+
+func (user *User) AvatarURL() string {
+	return fmt.Sprintf(
+		"//www.gravatar.com/avatar/%x",
+		md5.Sum([]byte(user.Email)),
+	)
+}
+
+func (user *User) ImagesRoute() string {
+	return "/user/" + user.ID
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"runtime"
 	"net/http"
 	"time"
 	"mime"
@@ -8,7 +9,13 @@ import (
 	"io"
 	"os"
 	"mime/multipart"
+	"github.com/disintegration/imaging"
+	"image"
 )
+
+func init() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
+}
 
 const imageIDLength = 10
 
@@ -78,6 +85,11 @@ func (image *Image) CreateFromURL(imageURL string) error {
 
 	image.Size = size
 
+	err = image.CreateResizedImages()
+	if err != nil {
+		return err
+	}
+
 	return globalImageStore.Save(image)
 }
 
@@ -99,5 +111,85 @@ func (image *Image) CreateFromFile(file multipart.File, headers *multipart.FileH
 
 	image.Size = size
 
+	err = image.CreateResizedImages()
+	if err != nil {
+		return err
+	}
+
 	return globalImageStore.Save(image)
+}
+
+func (image *Image) StaticRoute() string {
+	return "/im/" + image.Location
+}
+
+func (image *Image) ShowRoute() string {
+	return "/image/" + image.ID
+}
+
+func (image *Image) UpdateResizedImages() error {
+	ok := image.checkThumbnail()
+	if !ok {
+		image.CreateResizedImages()
+	}
+	return nil
+}
+
+func (image *Image) CreateResizedImages() error {
+	srcImage, err := imaging.Open("./data/images/" + image.Location)
+	if err != nil {
+		return err
+	}
+
+	errorChan := make(chan error)
+
+	go image.resizePreview(errorChan, srcImage)
+	go image.resizeThumbnail(errorChan, srcImage)
+
+	//var err error
+	//err = nil
+	for i := 0; i < 2; i++ {
+		e := <-errorChan
+		if e != nil {
+			err = e
+		}
+	}
+	return err
+}
+
+var widthThumbnail = 400
+
+func (image *Image) checkThumbnail() bool {
+	thumbFilename := "./data/images/thumbnail/" + image.Location
+	if _, err := os.Stat(thumbFilename); os.IsNotExist(err){
+		return false
+	}
+	return true
+}
+
+func (image *Image) resizeThumbnail(errorChan chan error, srcImage image.Image) {
+	dstImage := imaging.Thumbnail(srcImage, widthThumbnail, widthThumbnail, imaging.Lanczos)
+	destination := "./data/images/thumbnail/" + image.Location
+	errorChan <- imaging.Save(dstImage, destination)
+}
+
+var widthPreview = 800
+
+func (image *Image) resizePreview(errorChan chan error, srcImage image.Image){
+	size := srcImage.Bounds().Size()
+	ratio := float64(size.Y) / float64(size.X)
+	targetHeight := int(float64(widthPreview) * ratio)
+	dstImage := imaging.Resize(srcImage, widthPreview, targetHeight, imaging.Lanczos)
+
+	destination := "./data/images/preview/" + image.Location
+
+	errorChan <- imaging.Save(dstImage, destination)
+}
+
+func (image *Image) StaticThumbnailRoute() string {
+	return "/im/thumbnail/"+ image.Location
+}
+
+func (image *Image) StaticPreviewRoute() string {
+	return "/im/preview/"+ image.Location
 }

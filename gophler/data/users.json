@@ -1,5 +1,11 @@
 {
   "Users": {
+    "usr_7dMduWpve6kjcqs3l56O": {
+      "ID": "usr_7dMduWpve6kjcqs3l56O",
+      "Username": "admin",
+      "Email": "svkior@ttsy.ru",
+      "HashedPassword": "$2a$10$bwITNo7z4tAwghiQfrt7cO.ckN6TMtbajV1VAa02p6TquxA4ocXCm"
+    },
     "usr_80aGcfM8NM6nrOCPbh2F": {
       "ID": "usr_80aGcfM8NM6nrOCPbh2F",
       "Username": "svkior",

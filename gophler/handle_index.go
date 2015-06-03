@@ -6,5 +6,11 @@ import (
 )
 
 func HandleHome(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	RenderTemplate(w, r, "index/home", nil)
+	images, err := globalImageStore.FindAll(0)
+	if err != nil {
+		panic(err)
+	}
+	RenderTemplate(w, r, "index/home", map[string]interface{}{
+		"Images": images,
+	})
 }
