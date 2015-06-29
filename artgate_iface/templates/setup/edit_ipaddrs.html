@@ -1,0 +1,32 @@
+{{define "setup/editip"}}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Изменение параметра Ethernet интерфейса</h1>
+        {{with .Error}}
+        <div class="alert error">
+            {{.}}
+        </div>
+        {{end}}
+
+        <form action="/setup-ip" method="POST">
+            <div class="form-group">
+                <label for="newIPAddr">IP Адрес</label>
+                <input type="text" name="ipaddr" value="{{.Setup.IpAddress}}" id="newIPAddr" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="newIPMask">IP Маска</label>
+                <input type="text" name="ipmask" value="{{.Setup.IpMask}}" id="newIPMask" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="newIpGw">IP Шлюз</label>
+                <input type="text" name="ipgw" value="{{.Setup.IpGw}}" id="newIpGw" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="newMac">MAC Адрес</label>
+                <input type="text" name="macs" value="{{.Setup.Mac}}" id="newMac" class="form-control">
+            </div>
+            <input type="submit" value="Сохранить" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{{end}}

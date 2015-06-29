@@ -1,0 +1,28 @@
+{{define "setup/editartnet"}}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Изменение параметров ArtNet</h1>
+        {{with .Error}}
+        <div class="alert error">
+            {{.}}
+        </div>
+        {{end}}
+
+        <form action="/setup-artnet" method="POST" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Число ArtNet входов</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="artinputs">
+                        <option {{if eq .Setup.ArtnetInputs 0}} selected="selected" {{end}}>0</option>
+                        <option {{if eq .Setup.ArtnetInputs 1}} selected="selected" {{end}}>1</option>
+                        <option {{if eq .Setup.ArtnetInputs 2}} selected="selected" {{end}}>2</option>
+                        <option {{if eq .Setup.ArtnetInputs 3}} selected="selected" {{end}}>3</option>
+                        <option {{if eq .Setup.ArtnetInputs 4}} selected="selected" {{end}}>4</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="Сохранить" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{{end}}

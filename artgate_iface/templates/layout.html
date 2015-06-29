@@ -1,0 +1,39 @@
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>Тествая прошивка для ArtGate</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">ArtGate 4DR</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <p class="navbar-text navbar-right">
+                {{if .CurrentUser}}
+                    <a href="/setup-ip" class="navbar-link">IP</a>
+                    <a href="/setup-artnet" class="navbar-link">ArtNet</a>
+                    <a href="/account" class="navbar-link">Пользователь</a>
+                    <a href="/sign-out" class="navbar-link">Выйти</a>
+                {{else}}
+                    <!--<a href="/register" class="navbar-link">Register</a>-->
+                    <a href="/login" class="navbar-link">Войти</a>
+                {{end}}
+            </p>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    {{if .Flash}}
+    <div class="alert alert-info">
+        {{.Flash}}
+    </div>
+    {{end}}
+    {{yield}}
+</div>
+
+</body>
+</html>

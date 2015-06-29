@@ -1,0 +1,16 @@
+{{define "setup/status"}}
+<div class="row">
+    <div class="col-md-12 col-xd-12">
+        <h1>Статус системы</h1>
+        <ul>
+            {{if .Setup}}
+                <li>IP Адрес: {{.Setup.IpAddress}}</li>
+                <li>IP Маска: {{.Setup.IpMask}}</li>
+                <li>IP Шлюз:  {{.Setup.IpGw}}</li>
+                <li>MAC:  {{.Setup.Mac}}</li>
+                <li>Число Входных каналов ArtNet: {{.Setup.ArtnetInputs}}</li>
+            {{end}}
+        </ul>
+    </div>
+</div>
+{{end}}

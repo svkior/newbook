@@ -1,0 +1,125 @@
+package main
+
+import (
+	"fmt"
+	"encoding/json"
+	"io/ioutil"
+	"os"
+	"strings"
+	"log"
+)
+
+type UserStore interface {
+	Find(string) (*User, error)
+	FindByEmail(string) (*User, error)
+	FindByUsername(string) (*User, error)
+	Save(User) error
+}
+
+type FileUserStore struct {
+	filename string
+	Users    map[string]User
+}
+
+func (store FileUserStore) Save(user User) error {
+	store.Users[user.ID] = user
+
+	contents, err := json.MarshalIndent(store, "", "  ")
+	if err != nil {
+		return err
+	}
+	err = ioutil.WriteFile(store.filename, contents, 0660)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (store FileUserStore) Find(id string) (*User, error) {
+	user, ok := store.Users[id]
+	if ok {
+		return &user, nil
+	}
+	return nil, nil
+}
+
+func (store FileUserStore) FindByUsername(username string) (*User, error) {
+	if username == "" {
+		return nil, nil
+	}
+
+	for _, user := range store.Users {
+		if strings.ToLower(username) == strings.ToLower(user.Username) {
+			return &user, nil
+		}
+	}
+	return nil, nil
+}
+
+func (store FileUserStore) FindByEmail(email string) (*User, error) {
+	if email == "" {
+		return nil, nil
+	}
+
+	for _, user := range store.Users {
+		if strings.ToLower(email) == strings.ToLower(user.Email) {
+			return &user, nil
+		}
+	}
+	return nil, nil
+}
+
+func NewFileUserStore(filename string) (*FileUserStore, error) {
+	store := &FileUserStore{
+		Users:    map[string]User{},
+		filename: filename,
+	}
+
+	contents, err := ioutil.ReadFile(filename)
+	if err != nil {
+		if os.IsNotExist(err) {
+
+			return store, nil
+		}
+		return nil, err
+	}
+
+	err = json.Unmarshal(contents, store)
+	if err != nil {
+		return nil, err
+	}
+
+
+	return store, nil
+}
+
+var globalUserStore UserStore
+
+func init() {
+	store, err := NewFileUserStore("./data/users.json")
+	if err != nil {
+		panic(fmt.Errorf("Error creating users store: %s", err))
+	}
+	globalUserStore = store
+
+	log.Println("Hello, World!")
+	usr, _  := globalUserStore.Find("admin")
+	log.Println(usr)
+	if usr == nil {
+		log.Println("Want to insert Admin!!!!")
+		usr, err := NewUser("admin", "admin@example.com", "12345678")
+		log.Println("CCCC")
+		if err != nil {
+			if IsValidationError(err) {
+				log.Println(err.Error())
+			}
+		}
+
+		err = globalUserStore.Save(usr)
+		if err != nil {
+			panic(err)
+		}
+
+	}
+}
