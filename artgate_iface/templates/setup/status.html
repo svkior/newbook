@@ -9,6 +9,16 @@
                 <li>IP Шлюз:  {{.Setup.IpGw}}</li>
                 <li>MAC:  {{.Setup.Mac}}</li>
                 <li>Число Входных каналов ArtNet: {{.Setup.ArtnetInputs}}</li>
+                {{ range $idx, $elem := .Setup.ArtIns }}
+                <li>
+                    Вход ArtNet{{$idx}}:
+                    {{if eq $elem.Enabled true}}
+                      Вселенная: {{$elem.Universe}}
+                    {{else}}
+                      <strong>ОТКЛ</strong>
+                    {{end}}
+                </li>
+                {{ end }}
             {{end}}
         </ul>
     </div>

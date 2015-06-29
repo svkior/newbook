@@ -19,6 +19,7 @@ func HandleSetupEthUpdate(w http.ResponseWriter, r *http.Request, _ httprouter.P
 	ipGw   := r.FormValue("ipgw")
 	ethMac := r.FormValue("macs")
 
+
 	log.Printf("MACS: %s", ethMac)
 
 	err := globalSetup.UpdateIpAddr(ipAddr)
@@ -95,7 +96,8 @@ func HandleSetupArtnetUpdate(w http.ResponseWriter, r *http.Request, _ httproute
 		panic(err)
 	}
 
-
+	//TODO: Сюда написать обработку типа привода
+	log.Println("TODO:///")
 
 	http.Redirect(w, r, "/?flash=Artnet+updated", http.StatusFound)
 }

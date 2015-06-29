@@ -21,6 +21,17 @@
                     </select>
                 </div>
             </div>
+            {{ range $idx, $elem := .Setup.ArtIns }}
+            <div class="form-group">
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="{{$elem.Name}}Enable" value="{{$elem.Name}}Option" {{if $elem.Enabled}}checked{{end}}> <strong>ВКЛ</strong>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="{{$elem.Name}}">Вселенная</label>
+                <input type="text" name="{{$elem.Name}}" value="{{$elem.Universe}}" id="{{$elem.Name}}" class="form-control">
+            </div>
+            {{end}}
             <input type="submit" value="Сохранить" class="btn btn-primary">
         </form>
     </div>
