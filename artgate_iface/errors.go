@@ -20,6 +20,8 @@ var (
 	errInvalidGw           = ValidationError(errors.New("Некорректный Шлюз"))
 	errInvalidMAC          = ValidationError(errors.New("Некорректный MAC адрес"))
 	errInvalidArtnetInputs = ValidationError(errors.New("Некорректное значение числа входов ArtNet"))
+	errInvalidArtnetOutputs= ValidationError(errors.New("Некорректное значение числа выходов ArtNet"))
+	errInvalidUniverse     = ValidationError(errors.New("Неправильный номер вселенной"))
 )
 
 func IsValidationError(err error) bool {

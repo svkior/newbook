@@ -1,16 +1,10 @@
 {
   "Users": {
-    "": {
-      "ID": "",
+    "usr_v7XQVlryGdbpWJ3jwvqm": {
+      "ID": "usr_v7XQVlryGdbpWJ3jwvqm",
       "Username": "admin",
       "Email": "admin@example.com",
-      "HashedPassword": ""
-    },
-    "usr_AY1yVBK1yEUlEjS0QFrJ": {
-      "ID": "usr_AY1yVBK1yEUlEjS0QFrJ",
-      "Username": "admin",
-      "Email": "admin@example.com",
-      "HashedPassword": "$2a$10$eus6EeXAyxwf9PGTH8kmnuXRnSXKQQDRQgZYhVc9qq2qWioXKxRTG"
+      "HashedPassword": "$2a$10$W6RAL1c66FhIAeEE0E9AD.0OzpJiwksqYQPYtyxDOcSi6lXnXlaXi"
     }
   }
 }

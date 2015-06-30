@@ -19,6 +19,17 @@
                     {{end}}
                 </li>
                 {{ end }}
+                <li>Число Выходных каналов ArtNet: {{.Setup.ArtnetOutputs}}</li>
+                {{ range $idx, $elem := .Setup.ArtOuts }}
+                <li>
+                    Вход ArtNet{{$idx}}:
+                    {{if eq $elem.Enabled true}}
+                        Вселенная: {{$elem.Universe}}
+                    {{else}}
+                        <strong>ОТКЛ</strong>
+                    {{end}}
+                </li>
+                {{ end }}
             {{end}}
         </ul>
     </div>
