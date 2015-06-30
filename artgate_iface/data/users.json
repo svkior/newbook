@@ -1,0 +1,16 @@
+{
+  "Users": {
+    "": {
+      "ID": "",
+      "Username": "admin",
+      "Email": "admin@example.com",
+      "HashedPassword": ""
+    },
+    "usr_AY1yVBK1yEUlEjS0QFrJ": {
+      "ID": "usr_AY1yVBK1yEUlEjS0QFrJ",
+      "Username": "admin",
+      "Email": "admin@example.com",
+      "HashedPassword": "$2a$10$eus6EeXAyxwf9PGTH8kmnuXRnSXKQQDRQgZYhVc9qq2qWioXKxRTG"
+    }
+  }
+}

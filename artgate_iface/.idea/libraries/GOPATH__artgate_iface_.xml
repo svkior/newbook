@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;artgate_iface&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../.." />
+      <root url="file://$PROJECT_DIR$/../../../../github.com" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$/../chapler/.idea" />
+      <root url="file://$PROJECT_DIR$/../gophler/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../../github.com/julienschmidt/httprouter/.git" />
+      <root url="file://$PROJECT_DIR$/../ttsy/.idea" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/../.git" />
+      <root url="file://$PROJECT_DIR$/../../../../golang.org/x/crypto/ssh/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../../golang.org/x/crypto/.git" />
+      <root url="file://$PROJECT_DIR$/../../../../golang.org/x/crypto/sha3/testdata" />
+      <root url="file://$PROJECT_DIR$/.idea" />
+    </excluded>
+  </library>
+</component>

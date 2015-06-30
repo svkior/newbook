@@ -1,0 +1,29 @@
+{{define "users/edit"}}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Профиль пользователя</h1>
+        {{with .Error}}
+        <div class="alert error">
+            {{.}}
+        </div>
+        {{end}}
+
+        <form action="/account" method="POST">
+            <div class="form-group">
+                <label for="newEmail">E-Mail</label>
+                <input type="text" name="email" value="{{.User.Email}}" id="newEmail" class="form-control">
+            </div>
+            <h2>Изменение пароля<small>опционально</small></h2>
+            <div class="form-group">
+                <label for="currentPassword">Текущий пароль</label>
+                <input type="password" name="password" value="" id="currentPassword" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Новый пароль</label>
+                <input type="password" name="newpassword" value="" id="newPassword" class="form-control">
+            </div>
+            <input type="submit" value="Сохранить" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{{end}}
