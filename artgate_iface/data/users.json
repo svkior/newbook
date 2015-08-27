@@ -1,10 +1,18 @@
 {
   "Users": {
+<<<<<<< HEAD
     "usr_Gst2H1SqInffKv7UddQE": {
       "ID": "usr_Gst2H1SqInffKv7UddQE",
       "Username": "admin",
       "Email": "admin@example.com",
       "HashedPassword": "$2a$10$zWnzFXGcogxRDhr0ADrDpuFHr8gFPCV0om5Kd0fDOX9.7ifXEY2XK"
+=======
+    "usr_v7XQVlryGdbpWJ3jwvqm": {
+      "ID": "usr_v7XQVlryGdbpWJ3jwvqm",
+      "Username": "admin",
+      "Email": "admin@example.com",
+      "HashedPassword": "$2a$10$W6RAL1c66FhIAeEE0E9AD.0OzpJiwksqYQPYtyxDOcSi6lXnXlaXi"
+>>>>>>> 4d8ceaa7e9ecd21a3394c478a96c975a23abfcad
     }
   }
 }

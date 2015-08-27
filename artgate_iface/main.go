@@ -35,6 +35,9 @@ func NewApp() Middleware {
 	secureRouter.Handle("GET",  "/setup-artnet", HandleSetupArtnetEdit)
 	secureRouter.Handle("POST", "/setup-artnet", HandleSetupArtnetUpdate)
 
+	secureRouter.Handle("GET",  "/setup-artnet-out", HandleSetupArtnetOutEdit)
+	secureRouter.Handle("POST", "/setup-artnet-out", HandleSetupArtnetOutUpdate)
+
 	middleware := Middleware{}
 	middleware.Add(router)
 	middleware.Add(http.HandlerFunc(RequireLogin))
