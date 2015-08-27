@@ -1,0 +1,57 @@
+{{define "index/home"}}
+
+<!-- TODO: 295  Начало рисования MAIN -->
+<div class="col-md-7">
+    {{if .Flash}}
+    <div class="alert alert-info">
+        {{.Flash}}
+    </div>
+    {{end}}
+    <h1>Здеся</h1>
+</div>
+
+<div class="col-md-2 content-right">
+    <h4>Новости</h4>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="rblock">
+                <div class="newest-classifieds">
+                    <!-- TODO: Динамику сюда -->
+                    <!-- TODO: Динамичный джаваскрипт 539 -->
+                    <div class="well2 media2">
+                        <div class="media-body">
+                            <div>
+                                <!-- TODO: ALIAS 539 -->
+                                <a href="/news/alias/">
+                                    <strong>Новость</strong>
+                                </a>
+                            </div>
+                            <div class="author" style="margin-bottom: 5px;">
+                                <span class="badge badge-info">Датка</span>
+                            </div>
+                            <div class="highslide-gallery">
+                                <!-- TODO: 559 Динамика -->
+                                <!-- TODO: Незабыть онклик!!!! -->
+                                <a href="/files/news/id/medium/basename" class="highslide" title="Title">
+                                    <!-- TODO: Стиль DISPLAY NONE 563 -->
+                                    <img class="img-rounded" src="/files/news/id/thumbnail/basename" style="margin: 2px 0; " alt="" />
+                                </a>
+                            </div>
+                            <div> Текст Новости</div>
+                            <!-- TODO: Динамика -->
+                            <div>
+                                <a href="/news/alias/">
+                                    <button type="button" class="btn btn-default btn-xs">Подробнее</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- TODO: Мастырим следующую новость сюда -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{end}}

@@ -1,0 +1,289 @@
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" {{if .SeoDescription}} content="{{.SeoDescription}}"{{else}} content="{{.Title}}" {{end}}/>
+    <meta name="keywords" content="{{if .SeoKeywords}}{{.SeoKeywords}}{{else}}{{.Title}}{{end}}" />
+    <meta name="author" content="ООО Театральные Технологические Системы" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content="TTSY Shop" />
+    <meta name='yandex-verification' content='674b69a04d9ffc9a' />
+
+    <title>{{.Title}}</title>
+
+    <link rel="shortcut icon" href="/assets/themes/ico/favicon.ico" type="image/x-icon"/>
+
+    <link href="/assets/themes/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="/assets/themes/css/base.css" rel="stylesheet" media="screen" />
+    <link href="/assets/themes/css/font-awesome.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/themes/css/highslide.css" />
+
+    <script type="text/javascript" src="/assets/themes/js/highslide/highslide-full.js"></script>
+    <script type="text/javascript" src="/assets/themes/js/highslide.config.js"></script>
+
+    <style>
+        @media (max-width: 768px) {
+            .add-classified-btn {
+                margin: 20px 0 0 0;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div class="container wrapper webradius">
+
+    <div class="header1" id="content">
+        <div class="container">
+            <div class="row selected-classifieds">
+                <header id="t3-header" class="container t3-header">
+                    <div class="main-container">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-sm-6 pull-left">
+                                    <a href="/">
+                                        <img src="/assets/themes/banners/logo.png" width="257" height="97" alt="logo" title="Главная | TTC" style="margin: 0px 0px 0px 5px;" />
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 pull-right text-right">
+                                    <div class="infocontacts">
+                                        <div style="margin-top: 3px; text-align: center;">
+                                            <span>
+                                                <span class="bold" style="font-size: 12pt;">+7 499 649-29-40</span>
+                                            </span>
+                                            <br/>
+                                            <span>
+                                                <span class="bold" style="font-size: 12pt;"> +7 495 730-83-45</span>
+                                            </span>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <span>
+                                                <span style="font-size: 10pt;">г.Москва, пос. Краснопахорское,</span>
+                                            </span>
+                                            <br/>
+                                            <span>
+                                                <span style="font-size: 10pt;"> д. Красная Пахра, д.57.</span>
+                                            </span>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <span style="font-size: 11pt; font-family: cursive;">
+                                                <strong>
+                                                    <a href="mailto:info@ttsy.ru">info@ttsy.ru</a>
+                                                </strong>
+                                            </span>
+                                            |&nbsp;
+                                            <span>
+                                                <strong>
+                                                    <a href="/feedback/" target="_blank">схема проезда</a>
+                                                </strong>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </div>
+
+    <div class="container wrapper">
+        <div class="row" id="menubar">
+            <div class="col-sm-3" style="padding-left: 0px !important;">
+                {{if .SLastDate}}<div id="amenu">Обновления: {{.SLastDate}}</div>{{end}}
+            </div>
+            <div class="col-sm-7">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown active"> <!-- Здесь выбирается активный-->
+                        <a href="/" class="dropdown-toggle">Главная</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/shop/category/" class="dropdown-toggle">Продукция</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/news/" class="dropdown-toggle">Новости</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/pages/projects/" class="dropdown-toggle">Проекты</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/prices/" class="dropdown-toggle">Цены</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/pages/about/" class="dropdown-toggle">О компании</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="/feedback/" class="dropdown-toggle">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <div style="padding-top: 5px; width: 100%;">
+                    <div class="search-open">
+                        <form class="form" role="form" method="post" action="/search/" id="searchbox">
+                            <div class="input-group input-group-sm animated fadeInDown">
+                                <input type="text" class="form-control" name="search" placeholder="Поиск" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-search" type="submit">»</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BREADCRUMPS -->
+        <div>
+            <ol class="breadcrumb" style="margin-bottom: 0px!important;">
+                <li><a href="/">Главная</a> </li>
+                <li><a href="/asd/asd">ASD</a> </li>
+                <li>...</li>
+                <li>...</li>
+            </ol>
+            <!--
+            <div style="height: 10px; "></div>
+            -->
+        </div>
+
+        <div>
+            <div class="row content">
+
+                <div class="col-md-3 content-left">
+                    <h4>Продукция</h4>
+                    <div class="row selected-classifieds">
+                        <div class="col-sm-12">
+                            <div class="panel-group" id="accordion">
+                                <!-- Делаем одно тестовое меню, потом заполняем как нужно -->
+                                <div class="rmenu">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <table>
+                                                <tr style="vertical-align: top;">
+                                                    <td nowrap="nowrap">
+                                                        <!-- Активность это: active bold -->
+                                                        <!-- TODO: Понять что такое ListOrder LO -->
+                                                        <span class="list_order active bold">LO&nbsp;</span>
+                                                    </td>
+                                                    <td>
+                                                        <!-- Активность это: active bold -->
+                                                        <!-- TODO: Подцепить титле -->
+                                                        <a href="/shop/category/id" class="active bold">Титле</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </h4>
+                                    </div>
+                                    <!-- TODO: Заменить -id на номер -->
+                                    <!-- TODO: Есть переменная in - она ставиться в класс -->
+                                    <div id="accordion-id" class="panel-collapse collapse ">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled">
+                                                <!-- TODO: Сделать активность динамическую: active bold -->
+                                                <li class="active bold">
+                                                    <table>
+                                                        <tr style="vertical-align: top;">
+                                                            <td>
+                                                                <!-- TODO: заменить id на id подкатегорий -->
+                                                                <!-- TODO: Подставить LO -->
+                                                                <!-- TODO: Подставить TITLE -->
+                                                                <a href="/shop/states/id">LO TITLE</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ССылка на портал гос закупок -->
+                        <div class="center">
+                            <a href='http://market.zakupki.mos.ru/Supplier/Supplier?supplierId=6095309&from=sp_api_1_iregistered'>
+                                <img src='http://market.zakupki.mos.ru/Files/API/PortalUser_03.png' alt='Я зарегистрирован на Портале Поставщиков'/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {{yield}}
+
+            </div>
+            <!-- TODO: Вставить скриптики 604 - 663 -->
+        </div>
+    </div>
+    <div class="footer">
+        <!-- TODO: Инсертировать JM GROUP SEO Строчки 668 Здесь будет SEO статья -->
+        <div class="row" style="padding-bottom: 0!important;">
+            <div class="col-sm-3 pull-left">
+                <small class="text-muted">Copyright ©. Все права защищены.</small>
+            </div>
+            <div class="col-sm-6 pull-center">
+                <small class="text-muted">ООО «Театральные Технологические Системы» Российский производитель.</small>
+            </div>
+            <div class="col-sm-3 pull-right">
+                <small class="text-muted">+7 499 649-29-40, +7 495 730-83-45</small>
+            </div>
+            <div style="position: absolute; right: 10px;">
+                <!-- FIXME: Проблемы с тем что кнопочка маленькая, а в оригинальном сайте нормальная -->
+                <a href="#top" id="backToTopBtn">
+                    <button type="button" class="btn btn-default btn-xs">
+                        <img src="/assets/themes/images/totop_scroller.png" style="padding: 0 2px;" />
+                    </button>
+                </a>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- TODO: Строчка 692 -->
+
+<div class="basketpanel">
+    <div class="container">
+
+        <span> ООО «Театральные Технологические Системы». +7 499 649-29-40, +7 495 730-83-45 </span>
+
+        <div> <a href="/basket/"><button type="button" class="btn btn-primary btn-sm">Оформить заказ</button></a> </div>
+        <div> <div id="basketsum"></div> </div>
+        <div> <div id="basket"></div> </div>
+        <div> Корзина: </div>
+    </div>
+</div>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter27805923 = new Ya.Metrika({id:27805923,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/27805923" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

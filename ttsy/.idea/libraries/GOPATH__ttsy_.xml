@@ -122,6 +122,7 @@
       <root url="file://$PROJECT_DIR$/../../../../github.com/golang/tools/go/ssa/testdata" />
       <root url="file://$PROJECT_DIR$/../../../tts/light_dali_go/.git" />
       <root url="file://$PROJECT_DIR$/../../../../golang.org/x/crypto/sha3/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../tts/light_dmx_go/.idea" />
       <root url="file://$PROJECT_DIR$/../../../tts/light_dmx_go/.git" />
       <root url="file://$PROJECT_DIR$/../../ryvok/gotest/.idea" />
       <root url="file://$PROJECT_DIR$/../../../../github.com/golang/tools/refactor/eg/testdata" />
